@@ -12,6 +12,9 @@
 #  updated_at  :datetime
 #
 
+
+
 class Movie < ApplicationRecord
   belongs_to :genre
+  validates_with TitleBracketsValidator, on :create
 end
