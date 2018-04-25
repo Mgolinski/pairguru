@@ -16,5 +16,6 @@
 
 class Movie < ApplicationRecord
   belongs_to :genre
-  validates_with TitleBracketsValidator, on :create
+  has_many :comments
+  validates_with TitleBracketsValidator
 end
