@@ -28,8 +28,8 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1
   def destroy
-    @comment.destroy
-    redirect_to comments_url, notice: 'Comment was successfully destroyed.'
+    Comment.find(params[:id]).destroy
+    redirect_to @movie, notice: 'Comment was successfully destroyed.'
   end
 
   private

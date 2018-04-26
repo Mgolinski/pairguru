@@ -9,3 +9,4 @@
   - @comments.each do |comment|
     %p= comment.body
     %p= "by: " + comment.user.name
+    = button_to "Delete", movie_comment_path(comment.movie, comment.id), method: :delete, data: { confirm: 'Are you sure?' }
