@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @users = User.all
     @top = []
     @users.each do |u|
-      @top << {:name => u.name, :number => u.comment.where('created_at >= ?', 2.weeks.ago).count} if u.comment.where('created_at >= ?', 2.weeks.ago).count > 0
+      @top << {:name => u.name, :number => u.comment.where('created_at >= ?', 7.days.ago).count} if u.comment.where('created_at >= ?', 2.weeks.ago).count > 0
     end
     @top.sort_by! {|hash| hash.values }
     @top.reverse![0..10]
